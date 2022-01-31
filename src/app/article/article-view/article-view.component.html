@@ -1,0 +1,56 @@
+<app-header></app-header>
+<main class="lyear-layout-content">
+  <div class="container-fluid p-t-15">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header"><h4>Ajouter un article</h4></div>
+          <div class="card-body">
+
+            <form class="form-horizontal"[formGroup]="registerForm">
+              <div class="form-group">
+                <label class="col-xs-12" for="intitule">Intitule</label>
+                <div class="col-xs-12">
+                  <input class="form-control" type="text" formControlName="intitule" id="intitule" name="intitule" placeholder="intitule">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-xs-12" for="prix">Prix</label>
+                <div class="col-xs-12">
+                  <input class="form-control" type="text" formControlName="prix" id="prix" name="prix" placeholder="prix">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-12" for="description">Description</label>
+                <div class="col-xs-12">
+                  <input class="form-control" type="text" formControlName="description" id="description" name="description" placeholder="description">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-12" for="example-select">Choisir la catégorie</label>
+                <div class="col-xs-12">
+                  <select class="form-control"  formControlName="categorie_id" id="categorie_id" size="1">
+                    <option  *ngFor="let categorie of categories" value={{categorie.id}}>{{categorie.intitule}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="offset-sm-2 col-sm-10">
+                  <button type="submit" (click)="onSubmit()" class="btn btn-primary float-right">
+                    Enregistrer
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>

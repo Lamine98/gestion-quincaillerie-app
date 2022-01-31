@@ -1,0 +1,99 @@
+
+    <!--左侧导航-->
+    <aside class="lyear-layout-sidebar">
+
+      <!-- logo -->
+      <div id="logo" class="sidebar-header">
+        <a href="/"><h3>gestion-quin</h3></a>
+      </div>
+      <div class="lyear-layout-sidebar-scroll">
+
+        <nav class="sidebar-main">
+          <ul class="nav nav-drawer">
+            <li class="nav-item active"> <a class="multitabs" routerLink="/profile"><i class="mdi mdi-home"></i>
+                <span>Accueil</span></a> </li>
+                <!-- <li class="nav-item nav-item-has-subnav">
+                  <a href="javascript:void(0)"><i class="mdi mdi-account"></i> <span>Gerer les utilisateurs</span></a>
+                  <ul class="nav nav-subnav">
+                    <li> <a class="multitabs" routerLink="/ajout">liste des utilisateurs</a> </li>
+                  </ul>
+                </li> -->
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-cash-multiple"></i> <span>Gerer les livraisons</span></a>
+              <ul class="nav nav-subnav">
+                <li> <a class="multitabs" routerLink="/ajout-revenu">Ajouter revenu</a> </li>
+              </ul>
+            </li>
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-cart-outline"></i> <span>Gerer les commandes</span></a>
+              <ul class="nav nav-subnav">
+                <li> <a class="multitabs" routerLink="/article">bons à valider</a> </li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-tag"></i> <span>Categories</span></a>
+              <ul class="nav nav-subnav">
+                <li> <a class="multitabs" routerLink="/categories">voir categories</a> </li>
+              </ul>
+            </li> -->
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="copyright">Copyright &copy; 2021. <a target="_blank" href="#">SOCE & LAMINE</a> All
+            rights reserved.</p>
+        </div>
+      </div>
+
+    </aside>
+    <!--End 左侧导航-->
+
+    <!--头部信息-->
+    <header class="lyear-layout-header">
+
+      <nav class="navbar navbar-default">
+        <div class="topbar">
+
+          <div class="topbar-left">
+            <div class="lyear-aside-toggler">
+              <span class="lyear-toggler-bar"></span>
+              <span class="lyear-toggler-bar"></span>
+              <span class="lyear-toggler-bar"></span>
+            </div>
+          </div>
+
+          <ul class="topbar-right">
+            <li class="dropdown dropdown-profile">
+              <a href="javascript:void(0)" data-toggle="dropdown">
+                <img class="img-avatar img-avatar-48 m-r-10" src="assets/theme/images/users/avatar.jpg" alt="笔下光年" />
+                <span>Mbaye <span class="caret"></span></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li> <a class="multitabs" routerLink="/mes-infos"><i class="mdi mdi-account"></i>Mon
+                    profile</a> </li>
+                <li> <a class="multitabs" href="javascript:void(0)"><i class="mdi mdi-lock-outline"></i>Mot
+                    de passe</a> </li>
+                <li class="divider"></li>
+                <li> <a href="" (click)="signOut()"><i class="mdi mdi-logout-variant"></i>Se deconnecter</a> </li>
+              </ul>
+            </li>
+            <!--切换主题配色-->
+
+          </ul>
+
+        </div>
+      </nav>
+
+    </header>
+    <!--End-->
+
+    <!--页面主要内容-->
+    <!-- <main class="lyear-layout-content">
+
+      <div id="iframe-content"></div>
+
+
+    </main> -->
+    <!--End -->
+
+<!--<app-dashboard></app-dashboard>-->
