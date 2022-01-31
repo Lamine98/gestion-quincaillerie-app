@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthStateService } from '../shared/auth-state.service';
-import { AuthService } from '../shared/auth.service';
+import { AuthService, User } from '../shared/auth.service';
 import { TokenService } from '../shared/token.service';
 
 @Component({
@@ -15,6 +15,7 @@ import { TokenService } from '../shared/token.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errors = null;
+  user: User;
 
   constructor(
     public router: Router,
@@ -37,13 +38,20 @@ export class LoginComponent implements OnInit {
     this.authService.signin(this.loginForm.value).subscribe(
       result => {
         console.log(this.responseHandler(result))
+        this.user = result
+
+        if (this.user.role == "comptable") {
+          this.router.navigate(['profile']);
+        }
+        else {
+          this.router.navigate(['admin-home']);
+        }
       },
       error => {
         this.errors = error.error;
       }, () => {
         this.authState.setAuthState(true);
         this.loginForm.reset()
-        this.router.navigate(['profile']);
       }
     );
   }

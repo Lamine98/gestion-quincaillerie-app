@@ -10,7 +10,7 @@ export class User {
   email: String;
   password: String;
   password_confirmation: String
-  role: Role;
+  role: string;
   etat: Boolean
 }
 
