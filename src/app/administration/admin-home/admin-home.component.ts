@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthStateService } from 'src/app/shared/auth-state.service';
 import { AuthService, User } from 'src/app/shared/auth.service';
 import { TokenService } from 'src/app/shared/token.service';
 
@@ -17,7 +18,7 @@ export class AdminHomeComponent implements OnInit {
   fournisseurs:any
 
   
-  constructor(public authService: AuthService, public tokenService: TokenService, public router: Router) {
+  constructor(public authService: AuthService, private auth: AuthStateService, public tokenService: TokenService, public router: Router) {
     this.authService.profileUser().subscribe((data:any) => {
       this.UserProfile = data;
       console.log(this.UserProfile)
@@ -43,6 +44,13 @@ export class AdminHomeComponent implements OnInit {
 
 }
   ngOnInit(): void {
+  }
+
+  // Signout
+  signOut() {
+    this.auth.setAuthState(false);
+    this.tokenService.removeToken();
+    this.router.navigate(['login']);
   }
 
 }

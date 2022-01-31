@@ -19,6 +19,7 @@ import { CategorieViewComponent } from './categorie/categorie-view/categorie-vie
 import { CategorieItemComponent } from './categorie/categorie-item/categorie-item.component';
 import { PersonnalComponent } from './personnal/personnal.component';
 import { AdminHomeComponent } from './administration/admin-home/admin-home.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { AdminHomeComponent } from './administration/admin-home/admin-home.compo
     CategorieViewComponent,
     CategorieItemComponent,
     PersonnalComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AdminHeaderComponent
     ],
   imports: [
     BrowserModule,
